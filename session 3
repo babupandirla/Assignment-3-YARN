@@ -1,0 +1,598 @@
+WordCount:
+[acadgild@localhost mapreduce]$ hadoop jar hadoop-mapreduce-examples-2.6.5.jar wordcount /hadoopdata1/word/word.txt /hadoopdata1/wordout
+18/06/16 12:08:34 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/06/16 12:08:35 INFO client.RMProxy: Connecting to ResourceManager at localhost/127.0.0.1:8032
+18/06/16 12:08:38 INFO input.FileInputFormat: Total input paths to process : 1
+18/06/16 12:08:38 INFO mapreduce.JobSubmitter: number of splits:1
+18/06/16 12:08:38 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1529123615612_0001
+18/06/16 12:08:39 INFO impl.YarnClientImpl: Submitted application application_1529123615612_0001
+18/06/16 12:08:39 INFO mapreduce.Job: The url to track the job: http://localhost:8088/proxy/application_1529123615612_0001/
+18/06/16 12:08:39 INFO mapreduce.Job: Running job: job_1529123615612_0001
+18/06/16 12:08:57 INFO mapreduce.Job: Job job_1529123615612_0001 running in uber mode : false
+18/06/16 12:08:57 INFO mapreduce.Job:  map 0% reduce 0%
+18/06/16 12:09:06 INFO mapreduce.Job:  map 100% reduce 0%
+18/06/16 12:09:16 INFO mapreduce.Job:  map 100% reduce 100%
+18/06/16 12:09:17 INFO mapreduce.Job: Job job_1529123615612_0001 completed successfully
+18/06/16 12:09:17 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=3189
+		FILE: Number of bytes written=221739
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=3753
+		HDFS: Number of bytes written=2237
+		HDFS: Number of read operations=6
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=1
+		Launched reduce tasks=1
+		Data-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=6766
+		Total time spent by all reduces in occupied slots (ms)=7909
+		Total time spent by all map tasks (ms)=6766
+		Total time spent by all reduce tasks (ms)=7909
+		Total vcore-milliseconds taken by all map tasks=6766
+		Total vcore-milliseconds taken by all reduce tasks=7909
+		Total megabyte-milliseconds taken by all map tasks=6928384
+		Total megabyte-milliseconds taken by all reduce tasks=8098816
+	Map-Reduce Framework
+		Map input records=48
+		Map output records=565
+		Map output bytes=5808
+		Map output materialized bytes=3189
+		Input split bytes=112
+		Combine input records=565
+		Combine output records=238
+		Reduce input groups=238
+		Reduce shuffle bytes=3189
+		Reduce input records=238
+		Reduce output records=238
+		Spilled Records=476
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=227
+		CPU time spent (ms)=2160
+		Physical memory (bytes) snapshot=296714240
+		Virtual memory (bytes) snapshot=4118224896
+		Total committed heap usage (bytes)=170004480
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=3641
+	File Output Format Counters 
+		Bytes Written=2237
+You have new mail in /var/spool/mail/acadgild
+[acadgild@localhost mapreduce]$ hdfs dfs -ls /hadoopdata1
+18/06/16 12:10:10 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Found 3 items
+drwxr-xr-x   - acadgild supergroup          0 2018-06-16 10:41 /hadoopdata1/hadoop
+drwxr-xr-x   - acadgild supergroup          0 2018-06-16 11:59 /hadoopdata1/word
+drwxr-xr-x   - acadgild supergroup          0 2018-06-16 12:09 /hadoopdata1/wordout
+[acadgild@localhost mapreduce]$ hdfs dfs -ls /hadoopdata1/wordout
+18/06/16 12:10:46 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Found 2 items
+-rw-r--r--   1 acadgild supergroup          0 2018-06-16 12:09 /hadoopdata1/wordout/_SUCCESS
+-rw-r--r--   1 acadgild supergroup       2237 2018-06-16 12:09 /hadoopdata1/wordout/part-r-00000
+You have new mail in /var/spool/mail/acadgild
+[acadgild@localhost mapreduce]$ hdfs dfs -cat /hadoopdata1/wordout/part-r-00000
+18/06/16 12:13:49 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+"Secure	1
+"https://"),	1
+(...)	2
+(date)	4
+(double-click	2
+(site	1
+(the	1
+1	1
+2	1
+2.1	1
+2.2	1
+2.3	1
+2.4	1
+2.5	1
+2.6	1
+2.7	1
+3	1
+4	1
+Advanced	1
+Back,	1
+Blog	1
+Bypassing	1
+CA	2
+Certificate	2
+Certificates.	1
+Click	1
+Connection	3
+Contents	1
+Corrupted	1
+Distrust	1
+Error	4
+Failed"	1
+Failed,	1
+Firefox	2
+For	1
+Fx44	1
+Go	1
+How	2
+If	2
+In	2
+Insecure	1
+It	1
+MOZILLA_PKIX_ERROR_ADDITIONAL_POLICY_CONSTRAINT_FAILED	1
+More	2
+Mozilla	1
+Mozilla's	2
+Program	2
+Reporting	1
+SEC_ERROR_EXPIRED_CERTIFICATE	1
+SEC_ERROR_EXPIRED_ISSUER_CERTIFICATE	1
+Secure	1
+Security	1
+Some	1
+Symantec	1
+TLS	1
+Table	1
+Taskbar)	2
+Technical	2
+The	15
+This	2
+To	1
+Troubleshoot	1
+URL	1
+Unless	1
+What	2
+When	2
+Windows	2
+a	8
+about	2
+actions	1
+adequately	1
+affecting	1
+also	2
+an	3
+and	9
+are	4
+article	2
+article.	1
+authorities	1
+authority	2
+available	2
+be	7
+because	2
+before	1
+begins	1
+below:	1
+by	1
+cannot	1
+case	2
+certificate	19
+certification	1
+click	1
+clock	4
+code:	3
+come	3
+common	1
+communicating	1
+complied	1
+connection	4
+connects	1
+contact	1
+contains	1
+correct	1
+could	1
+current	2
+date	6
+described	1
+details	3
+different	1
+do	3
+does	3
+eavesdropper,	1
+encounter	1
+encryption	2
+enough	1
+enough,	1
+error	9
+error.	1
+error?	2
+errors	3
+expired	3
+expired.	1
+fix	2
+fixed	1
+for	3
+from	3
+has	3
+icon	2
+identification,	1
+identity	1
+if	4
+imposed	1
+in	4
+incorrect	1
+incorrect,	2
+indicates	2
+inform	1
+information	3
+information,	1
+instead	1
+is	13
+issuer	1
+it	3
+it.	1
+know	1
+list	1
+message	2
+message,	1
+might	1
+more	2
+must	1
+name)	1
+need	1
+not	12
+occurs	1
+occurs,	1
+of	8
+on	9
+only	1
+or	2
+order	2
+over	1
+owners	2
+owners.	1
+page:	1
+policies	1
+policy	2
+possible,	1
+post,	1
+presented	2
+privacy.	1
+problem.	3
+problems	1
+proceed	1
+protect	1
+publishes	1
+reason	1
+recommended	1
+related	2
+risk	1
+safest	1
+secure	4
+secure.	1
+see	4
+self-signed	1
+set	2
+should	2
+show	3
+source	2
+source.	1
+stop	1
+store	1
+strong	2
+such	1
+support	2
+system	2
+system.	2
+technical	1
+text	2
+that	8
+the	37
+their	1
+them	1
+thing	1
+this	8
+time	6
+to	21
+today's	2
+troubleshoot	3
+trusted	5
+understand	1
+unknown	1
+until	3
+upcoming	1
+upon	1
+useful	1
+using	1
+valid	5
+validated	1
+verify	1
+visit	1
+vulnerable	1
+wait	1
+warning	1
+website	9
+website's	2
+website.	2
+websites.	2
+when	1
+which	1
+why	2
+will	6
+willing	1
+with	3
+with.	1
+work	1
+you	7
+your	5
+You have new mail in /var/spool/mail/acadgild
+Wordmean:
+[acadgild@localhost mapreduce]$ hadoop jar hadoop-mapreduce-examples-2.6.5.jar wordmean /hadoopdata1/word/word.txt /hadoopdata1/wordout1
+18/06/16 12:15:43 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/06/16 12:15:44 INFO client.RMProxy: Connecting to ResourceManager at localhost/127.0.0.1:8032
+18/06/16 12:15:46 INFO input.FileInputFormat: Total input paths to process : 1
+18/06/16 12:15:47 INFO mapreduce.JobSubmitter: number of splits:1
+18/06/16 12:15:47 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1529123615612_0002
+18/06/16 12:15:47 INFO impl.YarnClientImpl: Submitted application application_1529123615612_0002
+18/06/16 12:15:48 INFO mapreduce.Job: The url to track the job: http://localhost:8088/proxy/application_1529123615612_0002/
+18/06/16 12:15:48 INFO mapreduce.Job: Running job: job_1529123615612_0002
+18/06/16 12:16:00 INFO mapreduce.Job: Job job_1529123615612_0002 running in uber mode : false
+18/06/16 12:16:00 INFO mapreduce.Job:  map 0% reduce 0%
+18/06/16 12:16:09 INFO mapreduce.Job:  map 100% reduce 0%
+18/06/16 12:16:18 INFO mapreduce.Job:  map 100% reduce 100%
+18/06/16 12:16:19 INFO mapreduce.Job: Job job_1529123615612_0002 completed successfully
+18/06/16 12:16:19 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=39
+		FILE: Number of bytes written=215441
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=3753
+		HDFS: Number of bytes written=22
+		HDFS: Number of read operations=6
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=1
+		Launched reduce tasks=1
+		Data-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=6308
+		Total time spent by all reduces in occupied slots (ms)=7109
+		Total time spent by all map tasks (ms)=6308
+		Total time spent by all reduce tasks (ms)=7109
+		Total vcore-milliseconds taken by all map tasks=6308
+		Total vcore-milliseconds taken by all reduce tasks=7109
+		Total megabyte-milliseconds taken by all map tasks=6459392
+		Total megabyte-milliseconds taken by all reduce tasks=7279616
+	Map-Reduce Framework
+		Map input records=48
+		Map output records=1130
+		Map output bytes=16385
+		Map output materialized bytes=39
+		Input split bytes=112
+		Combine input records=1130
+		Combine output records=2
+		Reduce input groups=2
+		Reduce shuffle bytes=39
+		Reduce input records=2
+		Reduce output records=2
+		Spilled Records=4
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=232
+		CPU time spent (ms)=1900
+		Physical memory (bytes) snapshot=297168896
+		Virtual memory (bytes) snapshot=4118228992
+		Total committed heap usage (bytes)=170004480
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=3641
+	File Output Format Counters 
+		Bytes Written=22
+The mean is: 5.279646017699115
+You have new mail in /var/spool/mail/acadgild
+[acadgild@localhost mapreduce]$ hdfs dfs -ls /hadoopdata1/wordout1
+18/06/16 12:17:07 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Found 2 items
+-rw-r--r--   1 acadgild supergroup          0 2018-06-16 12:16 /hadoopdata1/wordout1/_SUCCESS
+-rw-r--r--   1 acadgild supergroup         22 2018-06-16 12:16 /hadoopdata1/wordout1/part-r-00000
+[acadgild@localhost mapreduce]$ hdfs dfs -cat /hadoopdata1/wordout1/part-r-0000018/06/16 12:17:27 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+count	565
+length	2983
+You have new mail in /var/spool/mail/acadgild
+Wordmedian:
+[acadgild@localhost mapreduce]$ hadoop jar hadoop-mapreduce-examples-2.6.5.jar wordmedian /hadoopdata1/word/word.txt /hadoopdata1/wordout2
+18/06/16 12:18:16 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/06/16 12:18:18 INFO client.RMProxy: Connecting to ResourceManager at localhost/127.0.0.1:8032
+18/06/16 12:18:20 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+18/06/16 12:18:20 INFO input.FileInputFormat: Total input paths to process : 1
+18/06/16 12:18:20 INFO mapreduce.JobSubmitter: number of splits:1
+18/06/16 12:18:21 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1529123615612_0003
+18/06/16 12:18:21 INFO impl.YarnClientImpl: Submitted application application_1529123615612_0003
+18/06/16 12:18:21 INFO mapreduce.Job: The url to track the job: http://localhost:8088/proxy/application_1529123615612_0003/
+18/06/16 12:18:21 INFO mapreduce.Job: Running job: job_1529123615612_0003
+18/06/16 12:18:33 INFO mapreduce.Job: Job job_1529123615612_0003 running in uber mode : false
+18/06/16 12:18:33 INFO mapreduce.Job:  map 0% reduce 0%
+18/06/16 12:18:42 INFO mapreduce.Job:  map 100% reduce 0%
+18/06/16 12:18:52 INFO mapreduce.Job:  map 100% reduce 100%
+18/06/16 12:18:52 INFO mapreduce.Job: Job job_1529123615612_0003 completed successfully
+18/06/16 12:18:52 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=176
+		FILE: Number of bytes written=215451
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=3753
+		HDFS: Number of bytes written=88
+		HDFS: Number of read operations=6
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=1
+		Launched reduce tasks=1
+		Data-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=6847
+		Total time spent by all reduces in occupied slots (ms)=6842
+		Total time spent by all map tasks (ms)=6847
+		Total time spent by all reduce tasks (ms)=6842
+		Total vcore-milliseconds taken by all map tasks=6847
+		Total vcore-milliseconds taken by all reduce tasks=6842
+		Total megabyte-milliseconds taken by all map tasks=7011328
+		Total megabyte-milliseconds taken by all reduce tasks=7006208
+	Map-Reduce Framework
+		Map input records=48
+		Map output records=565
+		Map output bytes=4520
+		Map output materialized bytes=176
+		Input split bytes=112
+		Combine input records=565
+		Combine output records=17
+		Reduce input groups=17
+		Reduce shuffle bytes=176
+		Reduce input records=17
+		Reduce output records=17
+		Spilled Records=34
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=207
+		CPU time spent (ms)=1890
+		Physical memory (bytes) snapshot=295038976
+		Virtual memory (bytes) snapshot=4118216704
+		Total committed heap usage (bytes)=170004480
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=3641
+	File Output Format Counters 
+		Bytes Written=88
+The median is: 4
+You have new mail in /var/spool/mail/acadgild
+[acadgild@localhost mapreduce]$ hdfs dfs -cat /hadoopdata1/wordout2/part-r-0000018/06/16 12:19:28 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+1	12
+2	87
+3	113
+4	90
+5	52
+6	41
+7	61
+8	24
+9	28
+10	14
+11	27
+12	6
+13	6
+15	1
+29	1
+36	1
+54	1
+[acadgild@localhost mapreduce]$ 
+
+
+STANDARDDEVIATION:	
+
+[acadgild@localhost mapreduce]$ hadoop jar hadoop-mapreduce-examples-2.6.5.jar wordstandarddeviation /hadoopdata1/word/word.txt /hadoopdata1/wordout4
+18/06/16 12:34:47 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/06/16 12:34:48 INFO client.RMProxy: Connecting to ResourceManager at localhost/127.0.0.1:8032
+18/06/16 12:34:51 INFO input.FileInputFormat: Total input paths to process : 1
+18/06/16 12:34:51 INFO mapreduce.JobSubmitter: number of splits:1
+18/06/16 12:34:51 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1529123615612_0005
+18/06/16 12:34:52 INFO impl.YarnClientImpl: Submitted application application_1529123615612_0005
+18/06/16 12:34:52 INFO mapreduce.Job: The url to track the job: http://localhost:8088/proxy/application_1529123615612_0005/
+18/06/16 12:34:52 INFO mapreduce.Job: Running job: job_1529123615612_0005
+18/06/16 12:35:04 INFO mapreduce.Job: Job job_1529123615612_0005 running in uber mode : false
+18/06/16 12:35:04 INFO mapreduce.Job:  map 0% reduce 0%
+18/06/16 12:35:13 INFO mapreduce.Job:  map 100% reduce 0%
+18/06/16 12:35:24 INFO mapreduce.Job:  map 100% reduce 100%
+18/06/16 12:35:24 INFO mapreduce.Job: Job job_1529123615612_0005 completed successfully
+18/06/16 12:35:25 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=56
+		FILE: Number of bytes written=215635
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=3753
+		HDFS: Number of bytes written=35
+		HDFS: Number of read operations=6
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=1
+		Launched reduce tasks=1
+		Data-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=6939
+		Total time spent by all reduces in occupied slots (ms)=8110
+		Total time spent by all map tasks (ms)=6939
+		Total time spent by all reduce tasks (ms)=8110
+		Total vcore-milliseconds taken by all map tasks=6939
+		Total vcore-milliseconds taken by all reduce tasks=8110
+		Total megabyte-milliseconds taken by all map tasks=7105536
+		Total megabyte-milliseconds taken by all reduce tasks=8304640
+	Map-Reduce Framework
+		Map input records=48
+		Map output records=1695
+		Map output bytes=24860
+		Map output materialized bytes=56
+		Input split bytes=112
+		Combine input records=1695
+		Combine output records=3
+		Reduce input groups=3
+		Reduce shuffle bytes=56
+		Reduce input records=3
+		Reduce output records=3
+		Spilled Records=6
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=228
+		CPU time spent (ms)=2300
+		Physical memory (bytes) snapshot=298651648
+		Virtual memory (bytes) snapshot=4118224896
+		Total committed heap usage (bytes)=170004480
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=3641
+	File Output Format Counters 
+		Bytes Written=35
+The standard deviation is: 3.869512312735721
+You have new mail in /var/spool/mail/acadgild
+[acadgild@localhost mapreduce]$ hdfs dfs -ls/hadoopdata1/wordout4
+-ls/hadoopdata1/wordout4: Unknown command
+[acadgild@localhost mapreduce]$ hdfs dfs -ls /hadoopdata1/wordout4
+18/06/16 12:36:09 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Found 2 items
+-rw-r--r--   1 acadgild supergroup          0 2018-06-16 12:35 /hadoopdata1/wordout4/_SUCCESS
+-rw-r--r--   1 acadgild supergroup         35 2018-06-16 12:35 /hadoopdata1/wordout4/part-r-00000
+[acadgild@localhost mapreduce]$ hdfs dfs -ls /hadoopdata1/wordout4/part-r-00000
+18/06/16 12:36:28 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+-rw-r--r--   1 acadgild supergroup         35 2018-06-16 12:35 /hadoopdata1/wordout4/part-r-00000
+You have new mail in /var/spool/mail/acadgild
+[acadgild@localhost mapreduce]$ hdfs dfs -cat /hadoopdata1/wordout4/part-r-00000
+18/06/16 12:37:18 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+count	565
+length	2983
+square	24209
+[acadgild@localhost mapreduce]$ 
+
+
+
+
+
